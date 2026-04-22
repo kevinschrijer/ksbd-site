@@ -358,6 +358,10 @@ h3 {
   gap: 12px;
 }
 
+.contact-actions-mobile {
+  display: none;
+}
+
 .contact-actions .button,
 .contact-form-actions .button {
   min-height: 82px;
@@ -886,6 +890,22 @@ h3 {
   max-width: none;
 }
 
+.contact-direct-line {
+  margin: 18px 0 0;
+  font-weight: 700;
+}
+
+.contact-direct-line a {
+  color: #000;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.16em;
+}
+
+.contact-direct-line a:hover,
+.contact-direct-line a:focus-visible {
+  color: var(--brand-dark);
+}
+
 .contact-form {
   display: grid;
   gap: 18px;
@@ -1189,6 +1209,20 @@ h3 {
 
   .tenderkompas-teaser-image {
     width: 100%;
+  }
+
+  .hero-copy .hero-actions {
+    display: none;
+  }
+
+  .contact-actions-mobile {
+    display: flex;
+    margin-top: 4px;
+  }
+
+  .contact-actions-mobile .button {
+    width: 100%;
+    justify-content: center;
   }
 
   .sector-disclosure {
