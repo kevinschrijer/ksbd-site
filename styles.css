@@ -494,6 +494,56 @@ h3 {
   line-height: 1.5;
 }
 
+.tenderkompas-teaser {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto;
+  gap: 28px;
+  align-items: end;
+  padding: 34px;
+  background:
+    linear-gradient(135deg, rgba(240, 184, 42, 0.18) 0%, rgba(240, 184, 42, 0.04) 36%, rgba(255, 255, 255, 0) 100%),
+    #fbfaf6;
+  border-top: 8px solid var(--brand);
+}
+
+.tenderkompas-teaser .eyebrow {
+  margin-bottom: 12px;
+}
+
+.tenderkompas-teaser h2 {
+  max-width: 15ch;
+  margin-bottom: 14px;
+}
+
+.tenderkompas-teaser p {
+  max-width: 58ch;
+  color: var(--text-soft);
+}
+
+.tenderkompas-teaser-note {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.tenderkompas-teaser-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: end;
+  justify-content: flex-end;
+}
+
+.tenderkompas-teaser-image {
+  width: min(100%, 300px);
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.tenderkompas-teaser-actions .button {
+  min-width: 300px;
+}
+
 .section-heading {
   margin-bottom: 26px;
 }
@@ -1077,6 +1127,16 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .tenderkompas-teaser {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .tenderkompas-teaser-actions {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
   .cycle-orbit {
     width: min(100%, 420px);
     margin-bottom: 10px;
@@ -1101,7 +1161,8 @@ h3 {
   .hero-panel,
   .section-intro,
   .contact-card,
-  .network-panel {
+  .network-panel,
+  .tenderkompas-teaser {
     padding: 24px;
   }
 
@@ -1111,6 +1172,15 @@ h3 {
 
   .services-band-grid {
     padding: 18px 24px 0;
+  }
+
+  .tenderkompas-teaser-actions .button {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .tenderkompas-teaser-image {
+    width: 100%;
   }
 
   .contact-profile {
