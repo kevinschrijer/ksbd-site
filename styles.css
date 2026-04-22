@@ -546,6 +546,10 @@ h3 {
 
 .tenderkompas-teaser-actions .button {
   min-width: 300px;
+  min-height: 82px;
+  font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.08;
 }
 
 .section-heading {
