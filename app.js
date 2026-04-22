@@ -40,7 +40,7 @@ if (menuToggle && siteMenu) {
 }
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const formData = new FormData(contactForm);
@@ -74,27 +74,39 @@ if (contactForm) {
       return;
     }
 
-    const subject = encodeURIComponent(`Aanvraag via KS|BD website van ${name}`);
-    const body = encodeURIComponent(
-      [
-        `Naam: ${name}`,
-        `E-mail: ${email}`,
-        `Telefoon: ${phone}`,
-        company ? `Organisatie: ${company}` : "",
-        "",
-        "Toelichting:",
-        message || "-"
-      ]
-        .filter(Boolean)
-        .join("\n")
-    );
-
     if (contactFormStatus) {
-      contactFormStatus.textContent =
-        "Je e-mailprogramma wordt geopend om de aanvraag te versturen.";
+      contactFormStatus.textContent = "Aanvraag wordt verstuurd...";
     }
 
-    window.location.href = `mailto:kevin.schrijer@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Formspree request failed");
+      }
+
+      contactForm.reset();
+
+      if (formStartedAt) {
+        formStartedAt.value = String(Date.now());
+      }
+
+      if (contactFormStatus) {
+        contactFormStatus.textContent =
+          "Dank, je aanvraag is verstuurd. Ik neem zo snel mogelijk contact met je op.";
+      }
+    } catch (error) {
+      if (contactFormStatus) {
+        contactFormStatus.textContent =
+          "Versturen is niet gelukt. Probeer het opnieuw of mail direct naar kevin@ksbd.nl.";
+      }
+    }
   });
 }
 
