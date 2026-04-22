@@ -6,6 +6,7 @@ const menuLinks = siteMenu ? siteMenu.querySelectorAll("a") : [];
 const contactForm = document.getElementById("contactForm");
 const formStartedAt = document.getElementById("formStartedAt");
 const contactFormStatus = document.getElementById("contactFormStatus");
+const sectorDisclosure = document.querySelector(".sector-disclosure");
 
 if (yearElement) {
   yearElement.textContent = String(new Date().getFullYear());
@@ -37,6 +38,27 @@ if (menuToggle && siteMenu) {
       menuToggle.setAttribute("aria-expanded", "false");
     });
   });
+}
+
+if (sectorDisclosure && "matchMedia" in window) {
+  const mobileDisclosure = window.matchMedia("(max-width: 860px)");
+
+  const syncSectorDisclosure = () => {
+    if (mobileDisclosure.matches) {
+      sectorDisclosure.removeAttribute("open");
+      return;
+    }
+
+    sectorDisclosure.setAttribute("open", "");
+  };
+
+  syncSectorDisclosure();
+
+  if ("addEventListener" in mobileDisclosure) {
+    mobileDisclosure.addEventListener("change", syncSectorDisclosure);
+  } else if ("addListener" in mobileDisclosure) {
+    mobileDisclosure.addListener(syncSectorDisclosure);
+  }
 }
 
 if (contactForm) {
