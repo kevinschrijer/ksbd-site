@@ -1002,6 +1002,14 @@ h3 {
   max-width: 18ch;
 }
 
+.sector-disclosure {
+  display: block;
+}
+
+.sector-summary {
+  display: none;
+}
+
 .sector-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1181,6 +1189,42 @@ h3 {
 
   .tenderkompas-teaser-image {
     width: 100%;
+  }
+
+  .sector-disclosure {
+    background: var(--surface);
+    padding: 16px 18px 18px;
+  }
+
+  .sector-disclosure[open] .sector-summary {
+    margin-bottom: 16px;
+  }
+
+  .sector-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    list-style: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .sector-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .sector-summary::after {
+    content: "+";
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--brand);
+  }
+
+  .sector-disclosure[open] .sector-summary::after {
+    content: "−";
   }
 
   .contact-profile {
