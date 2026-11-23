@@ -452,16 +452,18 @@ h3 {
   padding: 28px 34px 6px;
 }
 
-.services-band-header .eyebrow {
+.services-band-header h2 {
+  max-width: none;
   color: var(--brand);
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+}
+
+.services-band-header p {
+  color: #fff;
 }
 
 .services-band-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   padding: 18px 34px 0;
 }
@@ -473,17 +475,7 @@ h3 {
   border-radius: var(--radius);
 }
 
-.hero-service-card span {
-  display: block;
-  margin-bottom: 20px;
-  color: var(--brand);
-  font-size: 0.84rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-}
-
-.hero-service-card strong {
-  display: block;
+.hero-service-card h3 {
   margin-bottom: 12px;
   color: #fff;
   font-size: 1.18rem;
@@ -491,8 +483,8 @@ h3 {
   line-height: 1.2;
 }
 
-.hero-service-card small {
-  display: block;
+.hero-service-card p {
+  margin-bottom: 0;
   color: rgba(255, 255, 255, 0.72);
   font-size: 1rem;
   line-height: 1.5;
@@ -681,7 +673,8 @@ h3 {
   margin-bottom: 24px;
 }
 
-.cycle-heading h3 {
+.cycle-heading h2 {
+  max-width: none;
   margin-bottom: 12px;
   font-size: 1.5rem;
 }
@@ -1001,16 +994,33 @@ h3 {
   border-radius: var(--radius);
 }
 
-.contact-profile-copy h3 {
+.contact-profile-copy h2 {
   margin-bottom: 10px;
+  color: #000;
+  font-size: 1.2rem;
 }
 
 .contact-profile-copy p {
   margin-bottom: 0;
 }
 
-.hero-panel .contact-profile-copy h3 {
-  color: #000;
+.faq-content {
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.faq-content section {
+  margin-block: 2.5rem;
+}
+
+.faq-content h2 {
+  max-width: none;
+  font-size: 1.45rem;
+}
+
+.faq-content p a,
+.contact-email {
+  text-decoration: underline;
 }
 
 .sector-section {
