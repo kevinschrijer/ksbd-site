@@ -121,7 +121,7 @@ if (contactForm) {
 
       if (contactFormStatus) {
         contactFormStatus.textContent =
-          "Dank, je aanvraag is verstuurd. Ik neem zo snel mogelijk contact met je op.";
+          "Dank, je aanvraag is verstuurd. We nemen zo snel mogelijk contact met je op.";
       }
     } catch (error) {
       if (contactFormStatus) {
