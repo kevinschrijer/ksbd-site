@@ -991,7 +991,7 @@ h3 {
   justify-self: end;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: var(--radius);
+  border-radius: 50%;
 }
 
 .contact-profile-copy h2 {
